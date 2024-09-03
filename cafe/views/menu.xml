@@ -1,0 +1,38 @@
+<odoo>
+    <menuitem
+            name="Cafe"
+            id="cafe_menu_parent"
+            sequence="1"
+    />
+
+    <menuitem
+            name="Sale"
+            id="cafe_sale"
+            parent="cafe_menu_parent"
+            action="cafe_sale_action"
+            sequence="3"
+    />
+    <menuitem
+            name="Products"
+            id="cafe_products"
+            parent="cafe_menu_parent"
+            action="cafe_product_action"
+            sequence="3"
+    />
+    <menuitem
+            name="Customers"
+            id="cafe_customers"
+            parent="cafe_menu_parent"
+            action="cafe_sales_customerss"
+            sequence="3"
+    />
+
+     <menuitem
+            name="Product Tags"
+            id="cafe_product_tags"
+            parent="cafe_menu_parent"
+            action="cafe_product_tags_action"
+            sequence="3"
+    />
+
+</odoo>

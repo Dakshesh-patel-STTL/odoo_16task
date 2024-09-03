@@ -1,0 +1,83 @@
+<odoo>
+    <template id="report_sale">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="col-md-12">
+                        <h1>Sales Report for <t t-esc="doc.name" /></h1>                       
+                        <p>Customer: <t t-esc="doc.customer_id.name" /></p>
+                        <p>Date: <t t-esc="doc.date" /></p>
+                        
+                        <div>                            
+                            <t t-if="doc.customer_id.image_1920">                              
+                                     <img t-if="doc.customer_id.image_1920" t-att-src="image_data_uri(doc.customer_id.image_1920)" style="max-height:45pt;max-width:90%" alt="Customer"/>
+                            </t>
+                        </div>
+                        <br/>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.order_lines_ids" t-as="line">
+                                    <td style="font-weight: bolder">
+                                        <t t-esc="line.product.pro_name" />
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.quantity" />
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.sub_total" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br />
+                        <br/>
+                        <br/>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Tax</th>
+                                    <th>Base Price</th>
+                                    <th>Percentage</th>
+                                    <th>Tax Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.tax_lines_ids" t-as="line">
+                                    <td>
+                                        <t t-esc="line.tax_id.tax_name" />
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.base_price" />
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.percentage" />
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.tax_amount" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <div >
+                            <p>Untaxed Amount: <t t-esc="doc.untaxed_amount" /></p>
+                            <p>Tax Amount: <t t-esc="doc.tax_amount" /></p>
+                            <p>Total Amount: <t t-esc="doc.total_amount" /></p>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+
+
+</odoo>

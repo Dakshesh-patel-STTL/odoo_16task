@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cafe_product_variants_tree" model="ir.ui.view">
+        <field name="name">cafe.product.variants.tree</field>
+        <field name="model">cafe.product.variants</field>
+        <field name="arch" type="xml">
+            <tree string="Product Variants">
+                <field name="name" />
+                <field name="attribuite_values" />
+                <field name="price" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cafe_product_variants_form" model="ir.ui.view">
+        <field name="name">cafe.product.variants.form</field>
+        <field name="model">cafe.product.variants</field>
+        <field name="arch" type="xml">
+            <form string="Product Variants Form">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="attribuite_values" />
+                        <field name="price" />
+                        <field name="related_cafe_products" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

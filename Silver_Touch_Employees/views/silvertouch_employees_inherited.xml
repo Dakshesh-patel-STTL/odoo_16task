@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherited_silvertouch_employees_inherit_module_name" model="ir.ui.view">
+        <field name="name">Silvertouch_Employees</field>
+        <field name="model">silvertouch.employees</field>
+        <field name="inherit_id" ref="Silver_Touch_Employees.silvertouch_employees_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='address']" position="after">
+                <field name="birth_date" />
+                <field name='joining_date' />
+                <field name='department' />
+                <field name='notes' />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_silvertouch_employees_form_inherit_module_name" model="ir.ui.view">
+        <field name="name">Silvertouch_Employees</field>
+        <field name="model">silvertouch.employees</field>
+        <field name="inherit_id" ref="Silver_Touch_Employees.silvertouch_employees_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='address']" position="after">                
+                <field name="birth_date" />
+                <field name='joining_date' />
+                <field name="department" widget='many2one' />
+                <field name="hobbies" widget='one2many' />
+                <field name='notes'/>
+            </xpath>           
+            <xpath expr="//field[@name='birth_date']" position="attributes">
+                <attribute name="string">Date of Birth</attribute>
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

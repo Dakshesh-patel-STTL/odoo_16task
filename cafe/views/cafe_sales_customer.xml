@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_res_partner_tree_inherit_cafe" model="ir.ui.view">
+        <field name="name">res.partner.tree.inherit.cafe</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='display_name']" position="after">
+                <field name="cafe_sales_customer" attrs="{'invisible': [('cafe_sales_customer', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

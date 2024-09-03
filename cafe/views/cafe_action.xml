@@ -1,0 +1,68 @@
+<odoo>
+    <record
+            id="cafe_product_action"
+            model="ir.actions.act_window"
+    >
+        <field name="name">Cafe Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cafe.product</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record
+            id="cafe_orderline_action"
+            model="ir.actions.act_window"
+    >
+        <field name="name">Cafe OrderLine</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cafe.orderline</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="view_cafe_sale_search" model="ir.ui.view">
+        <field name="name">cafe.sale.search</field>
+        <field name="model">cafe.sales</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="customer_id" widget='many2one' string="Name"/>
+                <filter name="filter_orders" string="Confirmed Orders" domain="[('state','=','confirmed')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Customer" name="group_by_customer" context="{'group_by':'customer_id'}"/>
+                    <filter string="Order Date" name="group_by_order_date" context="{'group_by':'date'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by':'state'}"/>
+                </group>
+                <searchpanel>
+                    <field name="state" enable_counters='1'/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="cafe_sale_action" model="ir.actions.act_window">
+        <field name="name">Cafe Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cafe.sales</field>
+        <field name="view_mode">tree,form,calendar,graph,pivot,kanban</field>
+    </record>
+
+    <record id="cafe_sales_customerss" model="ir.actions.act_window">
+        <field name="name">Cafe Sales Customers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    
+    <record id="cafe_product_tags_action" model="ir.actions.act_window">
+        <field name="name">Cafe Product Tags</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cafe.product.tags</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="action_cafe_product_xls" model="ir.actions.act_url">
+        <field name="name">Export Cafe Products XLS</field>
+        <field name="type">ir.actions.act_url</field>
+        <field name="url">/web/binary/cafe_product_xls</field>
+        <field name="target">self</field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="cafe_product_inherited_parent_menu"
+        name="Extended Cafe"
+        action="cafe_product_extended_action"
+        sequence="10" />
+
+    <menuitem
+        id="cafe_product_menu"
+        name="Filtered Products"
+        parent="cafe_product_inherited_parent_menu"
+        sequence="10" />
+
+    <menuitem id="menu_stockable_products" name="Stockable Products" parent="cafe_product_menu"
+        action="action_stockable_products" />
+
+    <menuitem id="menu_consumable_products" name="Consumable Products" parent="cafe_product_menu"
+        action="action_consumable_products" />
+
+    <menuitem id="menu_service_products" name="Service Products" parent="cafe_product_menu"
+        action="action_service_products" />
+
+    <menuitem id="menu_cafe_variants" name="Product Variants"
+        parent="cafe_product_inherited_parent_menu"
+        action="action_product_variants" />
+
+    <menuitem id="menu_cafe_attrs" name="Product Attrs"
+        parent="cafe_product_inherited_parent_menu"
+        action="action_product_attrs" />
+
+    <menuitem id="menu_cafe_attr" name="Product Attr"
+        parent="cafe_product_inherited_parent_menu"
+        action="action_product_attr" />
+
+    <menuitem id="menu_cafe_attr_values" name="Product Attrs Values"
+        parent="cafe_product_inherited_parent_menu"
+        action="action_product_attr_values" />
+    <menuitem
+        id="menu_extended_cafe_sales"
+        name="Sales"
+        parent="cafe_product_inherited_parent_menu"
+        action="extended_sales_model_action"
+        />
+
+</odoo>

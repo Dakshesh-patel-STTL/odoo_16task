@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="root_silvertouch_employees_menu"
+        name="Employees"
+        sequence="10" />
+
+    <menuitem
+        id="employees_menu"
+        parent='root_silvertouch_employees_menu'
+        name="Details"
+        action='silvertouch_employees_action'
+        sequence="10" />
+
+    <menuitem
+        id="departments_menu"
+        name="Departments"
+        parent='root_silvertouch_employees_menu'
+        action='silvertouch_departments_action'
+        groups="group_silvertouch_admin,group_silvertouch_employee"
+        sequence="10" />
+
+    <menuitem id="menu_silvertouch_employee" name="Employees" action="action_silvertouch_employee" parent='root_silvertouch_employees_menu'
+    sequence="10" />
+</odoo>

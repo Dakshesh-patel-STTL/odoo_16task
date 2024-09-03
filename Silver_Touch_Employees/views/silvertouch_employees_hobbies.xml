@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="silvertouch_employees_hobbies_view_form" model="ir.ui.view">
+        <field name="name">silvertouch_employees_hobbies.view.form</field>
+        <field name="model">silvertouch.employees.hobbies</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="hobbies_name" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="silvertouch_employees_hobbies_view_tree" model="ir.ui.view">
+        <field name="name">silvertouch_employees_hobbies.view.tree</field>
+        <field name="model">silvertouch.employees.hobbies</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="hobbies_name" />
+            </tree>
+        </field>
+    </record>
+</odoo>

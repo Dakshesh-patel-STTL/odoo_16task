@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="combine_model_view_form" model="ir.ui.view">
+        <field name="name">combine_model.view.form</field>
+        <field name="model">combine.model</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="patient_id" />
+                        <field name="date_appointment" />
+                        <field name="end_date_appointment" />
+                        <field name="date_of_birth" />
+                        <field name='gender'/>
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

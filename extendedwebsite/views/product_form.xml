@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="product_enquiry_form" name="Product Enquiry Form">
+        <t t-call="website.layout">
+            <h1 style="margin-left:35vw">Product Enquiry</h1>
+            <form action="/product/enquiry/submit" method="post" style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #f9f9f9; margin-top:20px">
+               <!-- <input type="hidden" name="product_id" t-att-value="product.id"/> -->
+                
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" />
+                </div>
+            
+         
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" />
+                </div>
+            
+          
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="contact" style="display: block; margin-bottom: 5px; font-weight: bold;">Contact</label>
+                    <input type="text" id="contact" name="contact" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" />
+                </div>
+            
+       
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Message</label>
+                    <textarea id="message" name="message" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; height: 100px;"></textarea>
+                </div>
+            
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+                    Submit
+                </button>
+            </form>
+            
+    </t>     
+    </template>
+    
+
+</odoo>

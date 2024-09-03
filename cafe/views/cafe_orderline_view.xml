@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="view_cafe_orderline_form" model="ir.ui.view">
+            <field name="name">cafe.orderline.form</field>
+            <field name="model">cafe.orderline</field>
+            <field name="arch" type="xml">
+                <form string="OrderLine Form">
+                    <sheet>
+                        <group>
+                            <field name="product"/>
+                            <field name="quantity"/>
+                            <field name="price"/>
+                            <field name="sub_total"/>
+                            <field name="tax_id" widget='many2many_tags'/>
+                            <field name="tax_amount"/>
+                            <field name="total"/>                            
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_cafe_orderline_tree" model="ir.ui.view">
+            <field name="name">cafe.orderline.tree</field>
+            <field name="model">cafe.orderline</field>
+            <field name="arch" type="xml">
+                <tree string="OrderLine List" >
+                    <field name="product"/>
+                    <field name="quantity"/>
+                    <field name="price"/>
+                    <field name="sub_total"/>
+                    <field name="tax_id" widget='many2many_tags' options="{'no_create': True}"/>
+                    <field name="tax_amount"/>
+                    <field name="total"/>                                                          
+                </tree>
+            </field>
+        </record>
+    </data>
+
+</odoo>

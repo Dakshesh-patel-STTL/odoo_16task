@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <record id="extended_product_inherit_cafe_extention_form" model="ir.ui.view">
+    <field name="name">model.name.view.form.inherit</field>
+    <field name="model">cafe.product</field>
+    <field name="inherit_id" ref="cafe.view_cafe_product_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='pro_name']" position="after">
+        <field name="type_of_product" />
+      </xpath>
+    </field>
+  </record>
+  
+  <record id="extended_product_inherit_cafe_extention" model="ir.ui.view">
+    <field name="name">model.name.view.list.inherit</field>
+    <field name="model">cafe.product</field>
+    <field name="inherit_id" ref="cafe.view_cafe_product_tree" />
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='pro_name']" position="after">
+        <field name="type_of_product" />
+        <button name="create_variants" type="object" string="Create Variants" class="oe_highlight"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

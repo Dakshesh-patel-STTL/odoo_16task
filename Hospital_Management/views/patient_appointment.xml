@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record model="ir.ui.view" id="view_hospital_appointment_tree">
+        <field name="name">hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree string="Appointments">
+                <field name="sequence_id" />
+                <field name="patient_id" />
+                <field name="date_appointment"  attrs="{'invisible': [('note_checkbox', '=', False)]}"/>
+                <field name="note_checkbox" />
+                <field name="note" attrs="{'invisible': [('note_checkbox', '=', False)]}" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_hospital_appointment_form">
+        <field name="name">hospital.appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form string="Appointment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_id" />
+                            <field name="date_appointment" />
+                        </group>
+                        <group>
+                            <field name="note" />
+                            <field name="note_checkbox" force_save="True" />
+                        </group>
+                        <group>
+                            <field name="end_date_appointment" />
+                            <field name="note_book" force_save="True"></field>
+                            <field name="sequence_id" force_save="True"></field>
+
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_appointment_view_calendar" model="ir.ui.view">
+        <field name="name">hospital_appointment.view.calendar</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Single day calendar" date_start="date_appointment">
+                <field name="patient_id" widget='many2one' />
+                <field name="note" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="calendar_multiple_days_view" model="ir.ui.view">
+        <field name="name">calendar.multiple.days.view</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Multiple Days Calendar"
+                date_start="date_appointment"
+                date_stop="end_date_appointment">
+                <field name="patient_id" widget='many2one' />
+                <field name="date_appointment" />
+                <field name="end_date_appointment" />
+                <field name="note" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_hospital_appointment_bar_chart" model="ir.ui.view">
+        <field name="name">hospital.appointment.bar.chart</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <graph string="Appointments Bar Chart" type="bar">
+                <field name="date_appointment" type="date" />
+                <field name="id" string="Number of Appointments" type="integer" />
+            </graph>
+        </field>
+    </record> 
+   
+    <record id="calendar_single_days_appointment" model="ir.actions.act_window">
+        <field name="name">Calendar Single days</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref='hospital_appointment_view_calendar' />
+    </record>
+
+    <record id="calendar_multiple_days_appointment" model="ir.actions.act_window">
+        <field name="name">Calendar Single days</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="calendar_multiple_days_view" />
+    </record>
+  
+    <record id="graph_view_appointment" model="ir.actions.act_window">
+        <field name="name">Simple bar chart</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_hospital_appointment_bar_chart" />
+    </record>
+
+
+    <record id="action_hospital_appointment" model="ir.actions.act_window">
+        <field name="name">Create Appointment</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record id="action_combine_model" model="ir.actions.act_window">
+        <field name="name">Action Name</field>
+        <field name="res_model">combine.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

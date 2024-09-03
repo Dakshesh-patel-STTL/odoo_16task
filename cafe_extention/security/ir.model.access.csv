@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cafe_product_attribuite,access_cafe_product_attribuite,model_cafe_product_attribuite,,1,1,1,1
+access_cafe_product_variants,access_cafe_product_variants,model_cafe_product_variants,,1,1,1,1
+cafe_product_attribuites,cafe_product_attribuites,model_cafe_product_attribuites,,1,1,1,1
+cafe_product_attribuite_values,cafe_product_attribuite_values,model_cafe_product_attribuite_values,,1,1,1,1
+
+cafe_product_extended_sales,cafe_product_extended_sales,model_cafe_extended_delegate_sales,,1,1,1,1
+
+cafe_product_extended_orderline,cafe_product_extended_orderline,model_cafe_extended_delegate_orderline,,1,1,1,1

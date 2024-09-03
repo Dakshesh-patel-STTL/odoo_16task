@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_patient,access.hospital.patient,model_hospital_patient,Silver_Touch_Employees.group_silvertouch_admin,1,1,1,1
+access_hospital_appointment,access.hospital.appointment,model_hospital_appointment,Silver_Touch_Employees.group_silvertouch_admin,1,1,1,1
+
+access_hospital_combine,access.hospital.combine_md,model_combine_model,Silver_Touch_Employees.group_silvertouch_admin,1,1,1,1

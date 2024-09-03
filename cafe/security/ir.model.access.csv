@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner_cafe_sales,access_res_partner_cafe_sales,model_res_partner,,1,1,1,1
+access_cafe_orderline,access_cafe_orderline,model_cafe_orderline,,1,1,1,1
+access_cafe_product_tag,access_cafe_product_tag,model_cafe_product_tags,,1,1,1,1
+access_cafe_product,access_cafe_product,model_cafe_product,,1,1,1,1
+access_cafe_sale,access_cafe_sale,model_cafe_sales,,1,1,1,1
+access_cafe_taxline,access_cafe_taxline,model_cafe_taxline,,1,1,1,1
+access_product_taxes,access_product_taxes,model_product_taxes,,1,1,1,1
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cafe_product_attribuite_values_tree" model="ir.ui.view">
+        <field name="name">cafe.product.attribuite.values.tree</field>
+        <field name="model">cafe.product.attribuite.values</field>
+        <field name="arch" type="xml">
+            <tree string="Product Attribute Values">
+                <field name="name" />
+                <field name="cost" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cafe_product_attribuite_values_form" model="ir.ui.view">
+        <field name="name">cafe.product.attribuite.values.form</field>
+        <field name="model">cafe.product.attribuite.values</field>
+        <field name="arch" type="xml">
+            <form string="Product Attribute Value Form">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="cost" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

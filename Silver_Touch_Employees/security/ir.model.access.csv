@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_silvertouch_employees,access_silvertouch_employees,model_silvertouch_employees,,1,1,1,1
+
+access_silvertouch_departments,access_silvertouch_departments,model_silvertouch_departments,,1,0,0,0
+
+access_silvertouch_departments_admin,access_silvertouch_departments,model_silvertouch_departments,Silver_Touch_Employees.group_silvertouch_admin,1,1,1,0
+
+access_silvertouch_hobbies,access_silvertouch_hobbies,model_silvertouch_employees_hobbies,,1,1,1,1
+
+
+access_silvertouch_departments_employees,access_silvertouch_employees,model_silvertouch_departments,group_silvertouch_employee,1,0,0,0
+
+
+access_silvertouch_delegate_employees_admin,access_silvertouch_delegate_employees,model_silvertouch_employee,Silver_Touch_Employees.group_silvertouch_admin,1,1,1,1

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<menuitem id="menu_hospital_root" name="HMS"/>
+<menuitem id="menu_frontdesk" name="Front Desk" parent="menu_hospital_root"/>
+<menuitem id="menu_patients" name="Patients" parent="menu_frontdesk" action="action_hospital_patient"/>
+<menuitem id="menu_patients_readonly" name="View Patients" parent="menu_frontdesk" action="action_hospital_readonly_patient"/>
+<menuitem id="menu_patient_appointment" name="Appointments" parent="menu_frontdesk" action="action_hospital_appointment"/>
+
+<menuitem id="menu_patient_appointment_single_day" name="Calendar single day" parent="menu_hospital_root" action="calendar_single_days_appointment"/>
+<menuitem id="menu_patient_appointment_multiple_days" name="Calendar multiple days" parent="menu_hospital_root" action="calendar_multiple_days_appointment"/>
+<menuitem id="menu_patient_bar_chart_single" name="Bar chart" parent="menu_hospital_root" action="graph_view_appointment"/>
+
+<menuitem id="menu_patient_comnine" name="Combine" parent="menu_hospital_root" action="action_combine_model"/>
+</odoo>

@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+        <record id="view_cafe_product_form" model="ir.ui.view">
+            <field name="name">cafe.product.form</field>
+            <field name="model">cafe.product</field>
+            <field name="arch" type="xml">
+                <form string="Product Form">                 
+                    <sheet>
+                        <group>
+                            <field name="pro_name"/>
+                            <field name="pro_code"/>
+                            <field name="cost_price"/>
+                            <field name="sale_price"/>
+                            <field name="pro_image" widget='image' class="oe_avatar"/>
+                            <field name="tags" widget="many2many_tags" options="{'color_field':'color'}"/>
+                            <field name="gpm"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_cafe_product_tree" model="ir.ui.view">
+            <field name="name">cafe.product.tree</field>
+            <field name="model">cafe.product</field>
+            <field name="arch" type="xml">
+             
+                <tree string="Product List" editable='top'>
+                    <field name="reference_id" />
+                    <field name="pro_name"/>
+                    <field name="pro_code"/>
+                    <field name="cost_price"/>
+                    <field name="sale_price"/>
+                    <field name="pro_image" widget="image" options="{'size': [0, 50]}"/>
+                    <field name="tags" widget="many2many_tags" options="{'color_field':'color'}"/>
+                    <field name="gpm"/>                
+                </tree>
+               
+            </field>
+        </record>
+
+        <record id="view_product_kanban" model="ir.ui.view">
+            <field name="name">view.product.kanban</field>
+            <field name="model">cafe.product</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by='tags' on_create='quick_create' quick_create_view='cafe.view_cafe_product_form'>
+                    <field name="pro_name"/>
+                    <field name="cost_price"/>
+                    <field name="sale_price"/>
+                    <field name="gpm"/>
+                    <field name="id"/>
+                    <field name="tags"/>
+                    <field name="pro_image"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                <div style="flex: 1; margin-right: 10px;">
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li >Product Name:
+                                            <field name="pro_name" class="new-bold"/>
+                                        </li>
+                                        <li>Cost Price:
+                                            <field name="cost_price"/>
+                                        </li>
+                                        <li>Sale Price:
+                                            <field name="sale_price"/>
+                                        </li>
+                                        <li>GPM:
+                                            <field name="gpm"/>
+                                        </li>
+
+                                        <li>
+                                            <field name="tags" widget="many2many_tags"
+                                                   options="{'color_field':'color'}"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_image">
+                                    <img class="o_kanban_image_inner_pic"
+                                         t-att-src="'/web/image/cafe.product/' + record.id.raw_value + '/pro_image'"
+                                         alt="Product Image"
+                                         style="width: 100px; height: auto;"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</odoo>

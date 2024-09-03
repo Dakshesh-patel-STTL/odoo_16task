@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="product_enquiry_thank_you" name="Thankyouview">
+        <t t-call="website.layout">
+          <h1>Thanks for sending enquiry,We will get to you soon.</h1>
+        </t>       
+      </template>
+
+</odoo>

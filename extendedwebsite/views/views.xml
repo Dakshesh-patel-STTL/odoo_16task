@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="extendedwebsite.list">
+      <field name="name">Extendedwebsite list</field>
+      <field name="model">extendedwebsite.extendedwebsite</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="extendedwebsite.action_window">
+      <field name="name">Extendedwebsite window</field>
+      <field name="res_model">extendedwebsite.extendedwebsite</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="extendedwebsite.action_server">
+      <field name="name">Extendedwebsite server</field>
+      <field name="model_id" ref="model_extendedwebsite_extendedwebsite"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="Extendedwebsite" id="extendedwebsite.menu_root"/>
+-->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="extendedwebsite.menu_1" parent="extendedwebsite.menu_root"/>
+    <menuitem name="Menu 2" id="extendedwebsite.menu_2" parent="extendedwebsite.menu_root"/>
+-->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="extendedwebsite.menu_1_list" parent="extendedwebsite.menu_1"
+              action="extendedwebsite.action_window"/>
+    <menuitem name="Server to list" id="extendedwebsite" parent="extendedwebsite.menu_2"
+              action="extendedwebsite.action_server"/>
+-->
+
+
+  <data noupdate="1">
+      <record id="test_menu" model="website.menu">
+          <field name="name">Cafe Sales</field>
+          <field name="url">/cafe/sales/view</field>
+          <field name="parent_id" ref="website.main_menu"/>          
+      </record>
+  </data>
+
+
+
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cafe_product_extended_action" model="ir.actions.act_window">
+        <field name="name">Extended Product</field>
+        <field name="res_model">cafe.product</field>
+        <field name="view_mode">tree,form</field>      
+    </record>
+    
+    <record id="action_stockable_products" model="ir.actions.act_window">
+        <field name="name">Stockable Products</field>
+        <field name="res_model">cafe.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_of_product', '=', 'stockable')]</field>
+        <field name="context">{'default_type_of_product': 'stockable'}</field>
+    </record>
+
+    <record id="action_consumable_products" model="ir.actions.act_window">
+        <field name="name">Consumable Products</field>
+        <field name="res_model">cafe.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_of_product', '=', 'consumable')]</field>
+        <field name="context">{'default_type_of_product': 'consumable'}</field>
+    </record>
+    
+    <record id="action_service_products" model="ir.actions.act_window">
+        <field name="name">Service Products</field>
+        <field name="res_model">cafe.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type_of_product', '=', 'service')]</field>
+        <field name="context">{'default_type_of_product': 'service'}</field>
+    </record>
+
+        
+    <record id="action_product_variants" model="ir.actions.act_window">
+        <field name="name">Product Variants</field>
+        <field name="res_model">cafe.product.variants</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_product_attrs" model="ir.actions.act_window">
+        <field name="name">Product Attrs</field>
+        <field name="res_model">cafe.product.attribuites</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="action_product_attr" model="ir.actions.act_window">
+        <field name="name">Product Attrs</field>
+        <field name="res_model">cafe.product.attribuite</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_product_attr_values" model="ir.actions.act_window">
+        <field name="name">Product Attrs</field>
+        <field name="res_model">cafe.product.attribuite.values</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="extended_sales_model_action" model="ir.actions.act_window">
+        <field name="name">Extended sales</field>
+        <field name="res_model">cafe.extended.delegate.sales</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

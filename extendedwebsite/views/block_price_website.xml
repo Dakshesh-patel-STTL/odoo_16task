@@ -1,0 +1,54 @@
+<odoo>
+    <template id="products_inherit_view" inherit_id="website_sale.products">
+      
+        <xpath expr="//div[@id='products_grid']" position="inside">
+            <div class="my-custom-content">
+                <p>Custom content before the product grid.</p>
+            </div>
+        </xpath>
+    
+    </template>
+
+        <template id="customize_products_item" inherit_id="website_sale.products_item">
+            <xpath expr="//div[@class='product_price']" position="replace">
+                <div class="product_price">
+                 
+                    <t t-if="not request.env.user.has_group('base.group_user')">
+                        <a t-attf-href="/product/enquiry">
+                        <button type="button" class="btn btn-primary" >
+                            Buy Now
+                        </button>
+                    </a>
+                        
+                        
+                    </t>             
+                        <t t-else="">
+                            <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                            <span t-if="'base_price' in template_price_vals and (template_price_vals['base_price'] > template_price_vals['price_reduce']) and (template_price_vals['price_reduce'] or not website.prevent_zero_price_sale)">
+                                <del class="text-muted me-1 h6 mb-0" style="white-space: nowrap;">
+                                    <em class="small" t-esc="template_price_vals['base_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                </del>
+                            </span>
+                            <span class="h6 mb-0" t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale" t-esc="template_price_vals['price_reduce']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span class="h6 mb-0" t-else="" t-field="website.prevent_zero_price_sale_text"/>
+                            <span itemprop="price" style="display:none;" t-esc="template_price_vals['price_reduce']" />
+                            <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                        </t>
+                </div>
+            </xpath>
+        </template>
+    
+        <template id="customize_product_page" inherit_id="website_sale.product">
+            <xpath expr="//t[@t-call='website_sale.product_price']" position="replace">
+                <t t-if="request.env.user.has_group('base.group_user')"> 
+                    <t t-call="website_sale.product_price"/>
+                </t>
+                <t t-else="">
+                    <div class="alert alert-info">
+                        <p>Please log in to see the price.</p>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+        
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="silvertouch_departments_action" model="ir.actions.act_window">
+        <field name="context">{'default_status': 'None'}</field>
+    </record>
+    
+
+</odoo>

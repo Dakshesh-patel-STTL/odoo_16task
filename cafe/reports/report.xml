@@ -1,0 +1,12 @@
+<odoo>
+    <record id="cafe_sales_report" model="ir.actions.report">
+        <field name="name">Sales Report</field>
+        <field name="model">cafe.sales</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">cafe.report_sale</field>
+        <field name="report_file">cafe.report_sale</field>
+        <field name="print_report_name">'Sales Report - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_cafe_sales"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

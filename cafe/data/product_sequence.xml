@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="seq_cafe_product" model="ir.sequence">
+            <field name="name">cafe Product</field>
+            <field name="code">cafe.product</field>
+            <field name="prefix">P_O</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

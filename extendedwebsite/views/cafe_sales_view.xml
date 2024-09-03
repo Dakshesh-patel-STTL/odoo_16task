@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="cafe_sales_view_new" name="staruniverse">
+      <t t-call="website.layout">
+        <h1>Helloo GGGGG</h1>
+      </t>       
+    </template>
+</odoo>

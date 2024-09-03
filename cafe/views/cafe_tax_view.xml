@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="view_cafe_tax_form" model="ir.ui.view">
+            <field name="name">cafe.tax.form</field>
+            <field name="model">product.taxes</field>
+            <field name="arch" type="xml">
+                <form string="Taxes Form">
+                <sheet>
+                    <group>
+                        <field name="tax_name"/>
+                        <field name="tax_code"/>
+                        <field name="tax_percentage"/>
+
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_cafe_tax_tree" model="ir.ui.view">
+            <field name="name">cafe.tax.tree</field>
+            <field name="model">product.taxes</field>
+            <field name="arch" type="xml">
+                <tree string="OrderLine List">
+                      <field name="tax_name"/>
+                        <field name="tax_code"/>
+                        <field name="tax_percentage"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+
+</odoo>

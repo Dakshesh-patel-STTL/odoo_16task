@@ -1,0 +1,1 @@
+from .import cafe_product_inherited,cafe_product_sale_inherited,cafe_product_variants,cafe_product_attribuite,cafe_product_attribuite_values,cafe_product_attribuites,cafe_orderline_extended,cafe_delegate_inheri_sales
